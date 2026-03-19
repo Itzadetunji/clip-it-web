@@ -11,7 +11,7 @@ export default function Header() {
 					<img
 						src="/logo.png"
 						alt="Clip-It"
-						className="h-8 w-8"
+						className="h-8 w-8 rounded-lg"
 					/>
 					<p>Clip-It</p>
 				</Link>

@@ -100,9 +100,9 @@ body {
     oklch(0 0 0);
   --popover-foreground:
     oklch(0.985 0 0);
-  /* Primary color: #151617 - lighter shade for dark mode */
+ /* Primary color: #519A66 - very dark blue */
   --primary:
-    oklch(0.922 0 0);
+  oklch(0.6246 0.1078 151.5);
   --primary-foreground:
     oklch(0.205 0 0);
   --secondary:
