@@ -25,12 +25,37 @@ function SupportPage() {
 				<div className="flex flex-col gap-8">
 					<div className="flex flex-col gap-2">
 						<h3 className="text-lg font-medium text-foreground">
-							How does Clip-It work?
+							How does Clip-It Recorder work?
 						</h3>
 						<p className="text-foreground/80">
-							Clip-It lets you capture and share your favorite moments from
-							videos. Simply select the portion you want to clip and share it
-							with others.
+							Clip-It Recorder continuously records your screen in the
+							background using a rolling buffer. When something worth saving
+							happens—a clutch moment, a bug, a reaction—tap the Clip button
+							(in the app or from Control Centre) and the last 15, 30, or 60
+							seconds are instantly saved to your Photos library. No editing or
+							scrubbing required.
+						</p>
+					</div>
+					<div className="flex flex-col gap-2">
+						<h3 className="text-lg font-medium text-foreground">
+							How do I add Clip-It to Control Centre?
+						</h3>
+						<p className="text-foreground/80">
+							Go to Settings → Control Centre, then tap the + button next to
+							Screen Recording. When you start recording from the app, Clip-It
+							will appear as an option. Add it to Control Centre so you can
+							start recording and save clips without leaving whatever you&apos;re
+							doing.
+						</p>
+					</div>
+					<div className="flex flex-col gap-2">
+						<h3 className="text-lg font-medium text-foreground">
+							What clip lengths are available?
+						</h3>
+						<p className="text-foreground/80">
+							You can choose 15, 30, or 60 seconds. The app keeps a rolling
+							buffer of the most recent recording, so when you tap Clip, it
+							saves the last X seconds based on your selection.
 						</p>
 					</div>
 					<div className="flex flex-col gap-2">
@@ -38,9 +63,14 @@ function SupportPage() {
 							Is my data safe?
 						</h3>
 						<p className="text-foreground/80">
-							Yes. As stated in our Privacy Policy, we do not sell or share your
-							personal information. Your clips stay on your device unless you
-							choose to share them.
+							Yes. Clip-It Recorder does not collect, store, or transmit any
+							of your data. All recording happens on your device. Clips are
+							saved only to your Photos library when you tap Clip. We never
+							upload or retain any video. See our{" "}
+							<Link to="/privacy" className="text-primary hover:text-primary/80">
+								Privacy Policy
+							</Link>{" "}
+							for details.
 						</p>
 					</div>
 				</div>

@@ -26,9 +26,9 @@ function TermsPage() {
 						1. Acceptance of Terms
 					</h2>
 					<p className="text-foreground/80">
-						By downloading or using the Clip-It app, these terms will
-						automatically apply to you. You should make sure therefore that you
-						read them carefully before using the app.
+						By downloading or using Clip-It Recorder, these terms will
+						automatically apply to you. Please read them carefully before using
+						the app.
 					</p>
 				</section>
 
@@ -37,8 +37,11 @@ function TermsPage() {
 						2. Service Description
 					</h2>
 					<p className="text-foreground/80">
-						Clip-It provides tools to clip, save, and share moments from videos.
-						The App requires appropriate permissions to function on your device.
+						Clip-It Recorder is an iOS screen recording app that captures your
+						screen using a rolling buffer. When you tap the Clip button (in the
+						app or from Control Centre), it saves the last 15, 30, or 60 seconds
+						to your Photos library. The app requires Screen Recording and Photos
+						permissions to function. No account or subscription is required.
 					</p>
 				</section>
 
@@ -47,9 +50,11 @@ function TermsPage() {
 						3. User Responsibilities
 					</h2>
 					<p className="text-foreground/80">
-						You agree to use the App in compliance with applicable laws and
-						respect copyright and intellectual property rights when clipping
-						content.
+						You agree to use Clip-It Recorder in compliance with applicable
+						laws. You are responsible for the content you record and save. Do
+						not use the app to capture or distribute content that infringes
+						copyright, invades privacy, or violates the rights of others. Use
+						the app only for lawful purposes.
 					</p>
 				</section>
 
@@ -58,22 +63,33 @@ function TermsPage() {
 						4. Intellectual Property
 					</h2>
 					<p className="text-foreground/80">
-						The app itself, and all the trademarks, copyright, database rights
-						and other intellectual property rights related to it, still belong
-						to us. You are not allowed to copy, or modify the app, any part of
-						the app, or our trademarks in any way.
+						Clip-It Recorder, including its design, code, and branding, is owned
+						by us. All trademarks, copyrights, and other intellectual property
+						rights remain ours. You may not copy, modify, reverse engineer, or
+						redistribute the app or any part of it without permission.
 					</p>
 				</section>
 
 				<section className="flex flex-col gap-4">
 					<h2 className="text-xl font-bold text-foreground">
-						5. Changes to Terms
+						5. Disclaimer
 					</h2>
 					<p className="text-foreground/80">
-						We reserve the right to make changes to the app or to charge for its
-						services, at any time and for any reason. We will never charge you
-						for the app or its services without making it very clear to you
-						exactly what you&apos;re paying for.
+						Clip-It Recorder is provided &quot;as is&quot;. We do not guarantee
+						uninterrupted or error-free operation. Screen recording may be
+						subject to system limitations and the policies of other apps or
+						content you record.
+					</p>
+				</section>
+
+				<section className="flex flex-col gap-4">
+					<h2 className="text-xl font-bold text-foreground">
+						6. Changes to Terms
+					</h2>
+					<p className="text-foreground/80">
+						We may update these terms from time to time. Continued use of the
+						app after changes constitutes acceptance. We will not charge for the
+						app or its core features without clearly notifying you first.
 					</p>
 				</section>
 			</div>
