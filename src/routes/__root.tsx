@@ -87,6 +87,10 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
+				name: "google-site-verification",
+				content: "nUCmc_W1LA-3-f_BDF_OHyryftMKwHybwLMK8KsqlVQ",
+			},
+			{
 				title: "Clip-It - Never miss the moment",
 			},
 			{
