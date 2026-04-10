@@ -37,7 +37,7 @@ function HomePage() {
 					</p>
 				</div>
 				<a
-					href="https://apps.apple.com"
+					href="https://apps.apple.com/us/app/clip-it-recorder/id6760793037"
 					target="_blank"
 					rel="noopener noreferrer"
 					title="Download Clip-It on the App Store"
