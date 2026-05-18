@@ -62,7 +62,7 @@ function HomePage() {
 						</span>
 					</a>
 					<a
-						href="https://github.com/Itzadetunji/clip-it-macos/releases/download/v1.0/ClipIt.1.0.dmg"
+						href="https://github.com/Itzadetunji/clip-it-macos/releases/download/v1.1/ClipIt.1.1.dmg"
 						target="_blank"
 						rel="noopener noreferrer"
 						title="Download Clip-It on the App Store"
