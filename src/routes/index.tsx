@@ -62,10 +62,10 @@ function HomePage() {
 						</span>
 					</a>
 					<a
-						href="https://github.com/Itzadetunji/clip-it-macos/releases/download/v1.1/ClipIt.1.1.dmg"
+						href="https://github.com/Itzadetunji/clip-it-macos/releases/download/v2.1/clipit.dmg"
 						target="_blank"
 						rel="noopener noreferrer"
-						title="Download Clip-It on the App Store"
+						title="Download Clip-It for Mac"
 						className="inline-block transition-opacity hover:opacity-90"
 					>
 						<span className="inline-flex h-14 items-center gap-2 rounded-xl border border-border bg-foreground px-6 py-3 text-background">
