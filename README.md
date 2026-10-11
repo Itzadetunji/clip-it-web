@@ -1,193 +1,30 @@
-Welcome to your new TanStack Start app! 
+# Clip-It Website
 
-# Getting Started
+This is the website for **Clip-It**, an app that keeps recording your screen in the background so you can save the moment that just happened. Instead of starting a recording and hoping something good happens, you hit **Clip** after it happens and Clip-It saves the last few seconds.
 
-To run this application:
+The site introduces the app, shows screenshots, links to the iOS and Mac downloads, and hosts the Privacy, Terms and Support pages.
 
-```bash
-bun install
-bun --bun run dev
-```
+Clip-It is built for gamers, creators, streamers, developers, and anyone who wants to keep a moment from their screen without recording everything.
 
-# Building For Production
+## Clip-It for iOS
 
-To build this application for production:
+[Download on the App Store](https://apps.apple.com/us/app/clip-it-recorder/id6760793037)
 
-```bash
-bun --bun run build
-```
+- Records your iPhone or iPad screen in the background with iOS screen broadcasting.
+- Save the last 15, 30 or 60 seconds, or set a custom length.
+- Clip straight from Control Centre without leaving the app you're in.
+- Clips are saved to your Photos.
+- Clips include a watermark you can position and fade. With **Clip-It Pro** you can use your own logo.
+- Nothing leaves your device: Clip-It doesn't collect personal information or upload your videos.
 
-## Testing
+## Clip-It for macOS
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
+[Download for Mac](https://github.com/Itzadetunji/clip-it-macos/releases/download/v2.1/clipit.dmg) · Requires macOS 14.6 or later
 
-```bash
-bun --bun run test
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Uninstall the packages: `bun install @tailwindcss/vite tailwindcss -D`
-
-
-
-## Routing
-
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
-
-### Adding A Route
-
-To add a new route to your application just add a new file in the `./src/routes` directory.
-
-TanStack will automatically generate the content of the route file for you.
-
-Now that you have two routes you can use a `Link` component to navigate between them.
-
-### Adding Links
-
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
-
-```tsx
-import { Link } from "@tanstack/react-router";
-```
-
-Then anywhere in your JSX you can use it like so:
-
-```tsx
-<Link to="/about">About</Link>
-```
-
-This will create a link that will navigate to the `/about` route.
-
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
-    ],
-  }),
-  shellComponent: ({ children }) => (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  ),
-})
-```
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-## Server Functions
-
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
-
-```tsx
-import { createServerFn } from '@tanstack/react-start'
-
-const getServerTime = createServerFn({
-  method: 'GET',
-}).handler(async () => {
-  return new Date().toISOString()
-})
-
-// Use in a component
-function MyComponent() {
-  const [time, setTime] = useState('')
-  
-  useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
-}
-```
-
-## API Routes
-
-You can create API routes by using the `server` property in your route definitions:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
-
-export const Route = createFileRoute('/api/hello')({
-  server: {
-    handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
-    },
-  },
-})
-```
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/people')({
-  loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
-  },
-  component: PeopleComponent,
-})
-
-function PeopleComponent() {
-  const data = Route.useLoaderData()
-  return (
-    <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
-    </ul>
-  )
-}
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
-
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+- Lives in your menu bar and keeps a rolling recording of your screen, system audio and, optionally, your microphone.
+- Save the last 15, 30 or 60 seconds, or a custom length, with a keyboard shortcut (Control-Option-C by default), the menu bar or the app window.
+- Saving is near-instant, and clips are recorded in HEVC so files stay small. H.264 is available when you need the widest compatibility.
+- Choose your resolution (up to native) and frame rate (30 or 60 fps).
+- Your microphone is saved as its own audio track, separate from system audio.
+- A notification tells you when a clip is saved and where it went.
+- Everything stays on your Mac.
