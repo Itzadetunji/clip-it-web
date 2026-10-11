@@ -1,3 +1,4 @@
+import { GithubLogoIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 
 export default function Header() {
@@ -15,6 +16,16 @@ export default function Header() {
 					/>
 					<p>Clip-It</p>
 				</Link>
+				<a
+					href="https://github.com/Itzadetunji/clip-it-macos"
+					target="_blank"
+					rel="noopener noreferrer"
+					title="Clip-It for Mac on GitHub"
+					className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+				>
+					<GithubLogoIcon className="h-5 w-5" aria-hidden="true" />
+					<span>Mac source</span>
+				</a>
 			</div>
 		</header>
 	);

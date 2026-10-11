@@ -19,7 +19,7 @@ Clip-It is built for gamers, creators, streamers, developers, and anyone who wan
 
 ## Clip-It for macOS
 
-[Download for Mac](https://github.com/Itzadetunji/clip-it-macos/releases/download/v2.1/clipit.dmg) · Requires macOS 14.6 or later
+[Download for Mac](https://github.com/Itzadetunji/clip-it-macos/releases/download/v2.1/clipit.dmg) · [Source on GitHub](https://github.com/Itzadetunji/clip-it-macos) · Requires macOS 14.6 or later
 
 - Lives in your menu bar and keeps a rolling recording of your screen, system audio and, optionally, your microphone.
 - Save the last 15, 30 or 60 seconds, or a custom length, with a keyboard shortcut (Control-Option-C by default), the menu bar or the app window.
