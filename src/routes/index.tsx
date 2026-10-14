@@ -1,9 +1,13 @@
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import LaunchVideo from "#/components/LaunchVideo";
 import { Button } from "#/components/ui/button";
 
 export const Route = createFileRoute("/")({ component: HomePage });
+
+// The launch video replaced this hero; flip to true to bring it back.
+const SHOW_ORIGINAL_HERO = false;
 
 // Replace these with your actual screenshot paths (e.g. /app/8.png) in public/app/
 const SCREENSHOTS = [
@@ -12,6 +16,77 @@ const SCREENSHOTS = [
 	{ id: "screenshot-3", src: "/screenshots/shot-3.webp", alt: "Screenshot 3" },
 	{ id: "screenshot-4", src: "/screenshots/shot-4.webp", alt: "Screenshot 4" },
 ];
+
+const APPLE_LOGO_PATH =
+	"M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z";
+
+const DOWNLOADS = [
+	{
+		id: "app-store",
+		href: "https://apps.apple.com/us/app/clip-it-recorder/id6760793037",
+		title: "Download Clip-It on the App Store",
+		caption: "Download on the",
+		label: "App Store",
+	},
+	{
+		id: "mac",
+		href: "https://github.com/Itzadetunji/clip-it-macos/releases/download/v2.1/clipit.dmg",
+		title: "Download Clip-It for Mac",
+		caption: "Download for",
+		label: "Mac",
+	},
+];
+
+function DownloadLinks() {
+	return (
+		<div className="flex flex-wrap items-center justify-center gap-4">
+			{DOWNLOADS.map((download) => (
+				<a
+					key={download.id}
+					href={download.href}
+					target="_blank"
+					rel="noopener noreferrer"
+					title={download.title}
+					className="inline-block rounded-xl transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+				>
+					<span className="inline-flex h-14 items-center gap-2 rounded-xl border border-border bg-foreground px-6 py-3 text-background">
+						<svg
+							className="h-8 w-8"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path d={APPLE_LOGO_PATH} />
+						</svg>
+						<span className="text-left">
+							<span className="block text-xs">{download.caption}</span>
+							<span className="block text-lg font-semibold leading-tight">
+								{download.label}
+							</span>
+						</span>
+					</span>
+				</a>
+			))}
+		</div>
+	);
+}
+
+function OriginalHero() {
+	return (
+		<section className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16 text-center">
+			<div className="flex flex-col items-center gap-6">
+				<h1 className="max-w-2xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+					<span className="block">Record Every Second.</span>
+					<span className="block text-primary">Clip the Clutch Moments.</span>
+				</h1>
+				<p className="max-w-lg text-lg text-muted-foreground">
+					Never miss a moment. Record your screen and clip the clutch.
+				</p>
+			</div>
+			<DownloadLinks />
+		</section>
+	);
+}
 
 function HomePage() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,68 +100,28 @@ function HomePage() {
 	};
 	return (
 		<main className="flex flex-col items-center flex-1">
-			{/* Hero Section */}
-			<section className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16 text-center">
-				<div className="flex flex-col items-center gap-6">
-					<h1 className="max-w-2xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-						<span className="block">Record Every Second.</span>
-						<span className="block text-primary">Clip the Clutch Moments.</span>
-					</h1>
-					<p className="max-w-lg text-lg text-muted-foreground">
-						Never miss a moment. Record your screen and clip the clutch.
-					</p>
-				</div>
-				<div className="flex items-center gap-4">
-					<a
-						href="https://apps.apple.com/us/app/clip-it-recorder/id6760793037"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Download Clip-It on the App Store"
-						className="inline-block transition-opacity hover:opacity-90"
-					>
-						<span className="inline-flex h-14 items-center gap-2 rounded-xl border border-border bg-foreground px-6 py-3 text-background">
-							<svg
-								className="h-8 w-8"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								aria-hidden="true"
-							>
-								<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-							</svg>
-							<span className="text-left">
-								<span className="block text-xs">Download on the</span>
-								<span className="block text-lg font-semibold leading-tight">
-									App Store
-								</span>
-							</span>
-						</span>
-					</a>
-					<a
-						href="https://github.com/Itzadetunji/clip-it-macos/releases/download/v2.1/clipit.dmg"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Download Clip-It for Mac"
-						className="inline-block transition-opacity hover:opacity-90"
-					>
-						<span className="inline-flex h-14 items-center gap-2 rounded-xl border border-border bg-foreground px-6 py-3 text-background">
-							<svg
-								className="h-8 w-8"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								aria-hidden="true"
-							>
-								<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-							</svg>
-							<span className="text-left">
-								<span className="block text-xs">Download for</span>
-								<span className="block text-lg font-semibold leading-tight">
-									Mac
-								</span>
-							</span>
-						</span>
-					</a>
-				</div>
-			</section>
+			{SHOW_ORIGINAL_HERO ? (
+				<OriginalHero />
+			) : (
+				<section className="flex w-full max-w-6xl flex-col gap-10 px-6 pt-12 pb-20 sm:pt-16">
+					<div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
+						<h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tight text-balance text-foreground sm:text-5xl md:text-6xl">
+							See how Clip-It saves the moment you almost missed.
+						</h1>
+						<p className="max-w-sm text-base text-pretty text-muted-foreground sm:pb-1.5 sm:text-lg">
+							It records quietly in the background. Press ⌃⌥C and the last 15,
+							30 or 60 seconds land in your folder.
+						</p>
+					</div>
+					<LaunchVideo />
+					<div className="flex flex-col items-center gap-4 pt-4">
+						<p className="text-sm text-muted-foreground">
+							Free on iPhone and Mac.
+						</p>
+						<DownloadLinks />
+					</div>
+				</section>
+			)}
 
 			{/* Screenshots - Fade transition */}
 			<section className="w-full px-6 pb-16">
