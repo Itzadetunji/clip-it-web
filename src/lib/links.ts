@@ -1,1 +1,1 @@
-export const YOUTUBE_VIDEO_ID = "https://youtu.be/bE6CBTDJ1DI";
+export const YOUTUBE_VIDEO_ID = "bE6CBTDJ1DI";
